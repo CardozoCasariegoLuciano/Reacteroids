@@ -10,7 +10,8 @@ const KEY = {
   A: 65,
   D: 68,
   W: 87,
-  SPACE: 32
+  SPACE: 32,
+  R: 82,
 };
 
 export class Reacteroids extends Component {
@@ -62,10 +63,17 @@ export class Reacteroids extends Component {
     });
   }
 
+  handleRestart(value, e){
+    if(!this.state.inGame && e.keyCode === KEY.R){
+      this.startGame()
+    }
+  }
+
   componentDidMount() {
     window.addEventListener('keyup',   this.handleKeys.bind(this, false));
     window.addEventListener('keydown', this.handleKeys.bind(this, true));
     window.addEventListener('resize',  this.handleResize.bind(this, false));
+    window.addEventListener('keydown', this.handleRestart.bind(this, true));
 
     const context = this.refs.canvas.getContext('2d');
     this.setState({ context: context });
@@ -238,8 +246,9 @@ export class Reacteroids extends Component {
           <p>{message}</p>
           <button
             onClick={ this.startGame.bind(this) }>
-            try again?
+            try again? 
           </button>
+            <span className="restartgame">press [R]</span>
         </div>
       )
     }

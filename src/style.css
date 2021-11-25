@@ -48,6 +48,13 @@ canvas {
   z-index: 1;
   text-align: center;
 }
+
+.restartgame{
+  font-size: .8rem;
+  margin-top: 5px;
+  display:block ;
+}
+
 button{
   border: 4px solid #ffffff;
   background-color: transparent;
