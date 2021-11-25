@@ -250,7 +250,7 @@ export class Reacteroids extends Component {
         <span className="score current-score" >Score: {this.state.currentScore}</span>
         <span className="score top-score" >Top Score: {this.state.topScore}</span>
         <span className="controls" >
-          Use [A][S][W][D] or [←][↑][↓][→] to MOVE<br/>
+          Use [A][W][D] or [←][↑][→] to MOVE<br/>
           Use [SPACE] to SHOOT
         </span>
         <canvas ref="canvas"
